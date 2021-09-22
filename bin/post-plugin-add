@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+bash "${ASDF_PLUGIN_PATH}/bin/install-plugins"
