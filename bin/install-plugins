@@ -3,7 +3,9 @@
 FILE="$HOME/.asdf-plugins"
 if [[ -f "$FILE" ]]; then
     while IFS=$' ' read -r pluginname pluginsrc; do
-        asdf plugin add "${pluginname}" "${pluginsrc}"
+        if  [[ ! $pluginname == \#* ]]; then
+            asdf plugin add "${pluginname}" "${pluginsrc}"
+        fi
     done < "$FILE"
 else
     touch "$FILE"
